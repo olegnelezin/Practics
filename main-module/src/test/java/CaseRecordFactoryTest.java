@@ -1,13 +1,14 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import ru.nelezin.entity.CaseRecord;
 import ru.nelezin.enums.Article;
 import ru.nelezin.factory.CaseRecordFactory;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class CaseRecordFactoryTest {
 
@@ -65,6 +66,6 @@ public class CaseRecordFactoryTest {
             }
         }
 
-        assertTrue("Должны встречаться и true, и false", hasTrue && hasFalse);
+        assertTrue(hasTrue && hasFalse, "Должны встречаться и true, и false");
     }
 }
