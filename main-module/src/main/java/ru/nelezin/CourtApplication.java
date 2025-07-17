@@ -1,6 +1,9 @@
 package ru.nelezin;
 
 import java.util.ArrayList;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.nelezin.entity.CaseRecord;
 import ru.nelezin.factory.CaseRecordFactory;
 import ru.nelezin.service.CaseRecordService;
@@ -22,10 +25,13 @@ import java.util.Set;
 аргументировать свой выбор
 В задаче должен использоваться Stream API
  */
-public class CourtApplication {
 
+public class CourtApplication {
+    private static final Logger logger = LoggerFactory.getLogger(CourtApplication.class);
     public static void main(String[] args) {
+        logger.info("Starting main");
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter a number of records: ");
         int n = scanner.nextInt();
         List<CaseRecord> records = new ArrayList<>();
@@ -34,6 +40,7 @@ public class CourtApplication {
         }
 
         CaseRecordService caseRecordService = new CaseRecordService();
+        logger.info("Init CaseRecordService");
 
         System.out.print("Count the number of people who participated in the trials" +
                 " but were not convicted: ");
