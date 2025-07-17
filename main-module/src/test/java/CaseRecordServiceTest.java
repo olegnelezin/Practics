@@ -1,5 +1,5 @@
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.nelezin.entity.CaseRecord;
 import ru.nelezin.enums.Article;
 import ru.nelezin.service.CaseRecordService;
@@ -9,9 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CaseRecordServiceTest {
 
@@ -19,7 +19,7 @@ public class CaseRecordServiceTest {
 
     private List<CaseRecord> records;
 
-    @Before
+    @BeforeEach
     public void setup() {
         caseRecordService = new CaseRecordService();
         records = getSomeRecords();
